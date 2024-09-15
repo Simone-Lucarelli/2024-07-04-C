@@ -29,6 +29,7 @@ class Controller:
         print(max_weight, path)
 
     def fill_dd_years(self):
+        self._view.ddyear.options.clear()
         years = self._model.get_years()
         for year in years:
             self._view.ddyear.options.append(ft.dropdown.Option(year))
@@ -36,6 +37,7 @@ class Controller:
         print(f"Called fill_dd_year. Years: {years}")
 
     def fill_dd_shape(self, e):
+        self._view.ddshape.options.clear()
         year = self._view.ddyear.value
         shapes = self._model.get_shapes(year)
         for shape in shapes:
